@@ -742,6 +742,8 @@ jobs:
           PY
 
   android:
+    permissions:
+      contents: read
     needs: [docs-scope, changed-scope]
     if: needs.docs-scope.outputs.docs_only != 'true' && needs.changed-scope.outputs.run_android == 'true'
     runs-on: blacksmith-16vcpu-ubuntu-2404
